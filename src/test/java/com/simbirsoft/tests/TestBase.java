@@ -34,8 +34,6 @@ public class TestBase {
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
 
-        String email = credentials.email();
-        String password = credentials.password();
         String remoteBrowserUser = credentials.remoteBrowserUser();
         String remoteBrowserPassword = credentials.remoteBrowserPassword();
         String browserURL = System.getProperty("url", credentials.remoteBrowserURL());
