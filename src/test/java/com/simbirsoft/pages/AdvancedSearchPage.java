@@ -1,5 +1,6 @@
 package com.simbirsoft.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -32,4 +33,73 @@ public class AdvancedSearchPage {
     private SelenideElement projectEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_project']");
     private SelenideElement volunteerEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_volunteer']");
     private SelenideElement internshipEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_probation']");
+    private SelenideElement fullDayWorkHoursCheckbox = $x("//*[@data-qa='vacancysearch__schedule-item_fullDay']");
+    private SelenideElement shiftWorkHoursCheckbox = $x("//*[@data-qa='vacancysearch__schedule-item_shift']");
+    private SelenideElement flexibleWorkHoursCheckbox = $x("//*[@data-qa='vacancysearch__schedule-item_flexible']");
+    private SelenideElement remoteWorkHoursCheckbox = $x("//*[@data-qa='vacancysearch__schedule-item_remote']");
+    private SelenideElement flyInFlyOutWorkCheckbox = $x("//*[@data-qa='vacancysearch__schedule-item_flyInFlyOut']");
+    private SelenideElement hideAgencyVacanciesOptionCheckbox = $x("//*[@data-qa='vacancysearch__hide-agenсies_not_from_agency']");
+    private SelenideElement hideNotAvailableForDisabledOptionCheckbox = $x("//*[@data-qa='vacancysearch__only-for-disabled_accept_handicapped']");
+    private SelenideElement showOnlyAvailableForUnderagedOptionCheckbox = $x("//*[@data-qa='vacancysearch__only-for-kids_accept_kids']");
+    private SelenideElement sortByRelevanceRadiobutton = $x("//*[@data-qa='search__order_relevance']");
+    private SelenideElement sortByUpdatedRadiobutton = $x("//*[@data-qa='search__order_publication_time']");
+    private SelenideElement sortBySalaryDescendingRadiobutton = $x("//*[@data-qa='search__order_salary_desc']");
+    private SelenideElement sortBySalaryAscendingRadiobutton = $x("//*[@data-qa='search__order_salary_asc']");
+    private SelenideElement filterAllTimeRadiobutton = $x("//*[@data-qa='vacancysearch__searchperiod-item_0']");
+    private SelenideElement filterMonthRadiobutton = $x("//*[@data-qa='vacancysearch__searchperiod-item_30']");
+    private SelenideElement filterWeekRadiobutton = $x("//*[@data-qa='vacancysearch__searchperiod-item_7']");
+    private SelenideElement filterThreeDaysRadiobutton = $x("//*[@data-qa='vacancysearch__searchperiod-item_3']");
+    private SelenideElement filterOneDayRadiobutton = $x("//*[@data-qa='vacancysearch__searchperiod-item_1']");
+    private SelenideElement showTwentyRadiobutton = $x("//*[@data-qa='search__items-on-page_20']");
+    private SelenideElement showFiftyRadiobutton = $x("//*[@data-qa='search__items-on-page_50']");
+    private SelenideElement showHundredRadiobutton = $x("//*[@data-qa='search__items-on-page_100']");
+    private SelenideElement submitButton = $("#submit-bottom");
+
+    public AdvancedSearchPage checkPresenceOfVitalElements() {
+        boldHeader.shouldBe(Condition.visible);
+        keywordField.shouldBe(Condition.visible);
+        vacancyNameCheckbox.shouldBe(Condition.visible);
+        companyNameCheckbox.shouldBe(Condition.visible);
+        vacancyDescriptionCheckbox.shouldBe(Condition.visible);
+        searchLanguageDescriptionLink.shouldBe(Condition.visible);
+        specializations.shouldBe(Condition.visible);
+        selectSpecializationsLink.shouldBe(Condition.visible);
+        industry.shouldBe(Condition.visible);
+        selectIndustryLink.shouldBe(Condition.visible);
+        regionSearchField.shouldBe(Condition.visible);
+        salaryNumberField.shouldBe(Condition.visible);
+        salaryCurrencyField.shouldBe(Condition.visible);
+        searchOnlySetSalaryCheckbox.shouldBe(Condition.visible);
+        experienceDoesNotMatterRadiobutton.shouldBe(Condition.visible);
+        noExperienceRadiobutton.shouldBe(Condition.visible);
+        oneToThreeYearsExperienceRadiobutton.shouldBe(Condition.visible);
+        threeToSixYearsExperienceRadiobutton.shouldBe(Condition.visible);
+        moreThanSixYearsExperienceRadiobutton.shouldBe(Condition.visible);
+        fullTimeEmploymentCheckbox.shouldBe(Condition.visible);
+        partTimeEmploymentCheckbox.shouldBe(Condition.visible);
+        projectEmploymentCheckbox.shouldBe(Condition.visible);
+        internshipEmploymentCheckbox.shouldBe(Condition.visible);
+        fullDayWorkHoursCheckbox.shouldBe(Condition.visible);
+        shiftWorkHoursCheckbox.shouldBe(Condition.visible);
+        flexibleWorkHoursCheckbox.shouldBe(Condition.visible);
+        remoteWorkHoursCheckbox.shouldBe(Condition.visible);
+        flyInFlyOutWorkCheckbox.shouldBe(Condition.visible);
+        hideAgencyVacanciesOptionCheckbox.shouldBe(Condition.visible);
+        hideNotAvailableForDisabledOptionCheckbox.shouldBe(Condition.visible);
+        showOnlyAvailableForUnderagedOptionCheckbox.shouldBe(Condition.visible);
+        sortByRelevanceRadiobutton.shouldBe(Condition.visible);
+        sortByUpdatedRadiobutton.shouldBe(Condition.visible);
+        sortBySalaryDescendingRadiobutton.shouldBe(Condition.visible);
+        sortBySalaryAscendingRadiobutton.shouldBe(Condition.visible);
+        filterAllTimeRadiobutton.shouldBe(Condition.visible);
+        filterMonthRadiobutton.shouldBe(Condition.visible);
+        filterWeekRadiobutton.shouldBe(Condition.visible);
+        filterThreeDaysRadiobutton.shouldBe(Condition.visible);
+        filterOneDayRadiobutton.shouldBe(Condition.visible);
+        showTwentyRadiobutton.shouldBe(Condition.visible);
+        showFiftyRadiobutton.shouldBe(Condition.visible);
+        showHundredRadiobutton.shouldBe(Condition.visible);
+        submitButton.shouldBe(Condition.visible);
+        return this;
+    }
 }
