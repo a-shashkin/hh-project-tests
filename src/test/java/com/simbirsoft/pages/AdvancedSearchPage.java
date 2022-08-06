@@ -27,4 +27,9 @@ public class AdvancedSearchPage {
     private SelenideElement oneToThreeYearsExperienceRadiobutton = $x("//*[@data-qa='vacancysearch__experience-item_doesNotMatter']");
     private SelenideElement threeToSixYearsExperienceRadiobutton = $x("//*[@data-qa='vacancysearch__experience-item_doesNotMatter']");
     private SelenideElement moreThanSixYearsExperienceRadiobutton = $x("//*[@data-qa='vacancysearch__experience-item_doesNotMatter']");
+    private SelenideElement fullTimeEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_full']");
+    private SelenideElement partTimeEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_part']");
+    private SelenideElement projectEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_project']");
+    private SelenideElement volunteerEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_volunteer']");
+    private SelenideElement internshipEmploymentCheckbox = $x("//*[@data-qa='vacancysearch__employment-item_probation']");
 }
