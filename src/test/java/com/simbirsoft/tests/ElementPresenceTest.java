@@ -5,7 +5,7 @@ import com.simbirsoft.pages.MainPage;
 import com.simbirsoft.pages.SearchResultPage;
 import org.junit.jupiter.api.Test;
 
-public class ElementPresenceTest {
+public class ElementPresenceTest extends TestBase {
 
     MainPage mainPage = new MainPage();
 

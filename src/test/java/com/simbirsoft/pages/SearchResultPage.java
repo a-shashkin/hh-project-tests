@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SearchResultPage {
 
-    private SelenideElement searchField = $("a11y-search-input");
+    private SelenideElement searchField = $("#a11y-search-input");
     private SelenideElement searchButton = $(byText("Найти")).parent();
     private SelenideElement advancedSearchButton = $x("//*[@data-qa='advanced-search']");
     private SelenideElement vacanciesTab = $x("//*[@data-hh-tab-id='searchVacancy']");
@@ -18,8 +18,8 @@ public class SearchResultPage {
     private SelenideElement employersTab = $x("//*[@data-hh-tab-id='employersList']");
     private SelenideElement mainBoldHeader = $x("//*[@data-qa='vacancies-catalog-header']");
     private ElementsCollection jobNamesCollection = $$("h3.bloko-header-section-3");
-    private ElementsCollection tagsCollection = $$("a.cluster-tag");
-    private ElementsCollection salariesCollection = $$("a.cluster-tag");
+    private ElementsCollection tagsCollection = $$("a.bloko-chips-chip-link");
+    private ElementsCollection salariesCollection = $$("span.bloko-header-section-3");
 
     public SearchResultPage checkPresenceOfVitalElements() {
         searchField.shouldBe(Condition.visible);
