@@ -1,6 +1,7 @@
 package com.simbirsoft.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -8,6 +9,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
+    private SelenideElement regionHeader = $x("//*[@data-qa='mainmenu_areaSwitcher']");
+    private SelenideElement regionSearchInput = $("#area-search-input");
+    private ElementsCollection regionSearchResults = $$("li.suggest__item");
     private SelenideElement hhSymbol = $(".supernova-logo-wrapper");
     private SelenideElement searchField = $("#a11y-search-input");
     private SelenideElement searchButton = $(byText("Найти работу")).parent();
@@ -22,6 +26,15 @@ public class MainPage {
     public MainPage openPage() {
         open("");
         hhSymbol.shouldBe(Condition.visible);
+        return this;
+    }
+
+    // Зараза не даёт переключиться нормально на нужный регион. Отладить.
+    public MainPage switchToDesiredRegion(String desiredRegion) {
+        regionHeader.click();
+        $(byText("городов")).click();
+        $(byText("У")).click();
+        $$(".area-switcher-city").findBy(Condition.text(desiredRegion)).click();
         return this;
     }
 

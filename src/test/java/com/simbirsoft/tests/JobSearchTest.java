@@ -21,4 +21,12 @@ public class JobSearchTest extends TestBase {
         SearchResultPage searchResultPage = mainPage.searchJob("Разработчик");
         searchResultPage.checkCertainJobInResults(3, "Разработчик");
     }
+
+    @Test
+    void changeCityAndCheckPresence() {
+        mainPage.openPage()
+                .switchToDesiredRegion("Ульяновск");
+        SearchResultPage searchResultPage = mainPage.searchJob("Разработчик");
+        searchResultPage.changeCityAndCheck("Ульяновск", "Димитровград");
+    }
 }
