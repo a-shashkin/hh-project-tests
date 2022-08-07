@@ -6,6 +6,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -51,9 +52,7 @@ public class SearchResultPage {
         $(byText("Регион")).scrollIntoView(true);
         $$x("//*[@data-qa='serp__novafilter-title']").findBy(Condition.text(preselectedCity)).click();
         $$x("//*[@data-qa='serp__novafilter-title']").findBy(Condition.text(targetCity)).click();
-//        $(byText(preselectedCity)).parent().click();
-//        $(byText(targetCity)).parent().click();
-        vacancyCityCollection.shouldHave(CollectionCondition.texts(targetCity));
+        vacancyCityCollection.filter(Condition.matchText(targetCity)).shouldBe(sizeGreaterThan(0));
         vacancyCityCollection.filter(Condition.matchText(preselectedCity)).shouldBe(empty);
         return this;
     }

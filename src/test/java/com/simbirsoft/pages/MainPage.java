@@ -2,14 +2,18 @@ package com.simbirsoft.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
     private SelenideElement regionHeader = $x("//*[@data-qa='mainmenu_areaSwitcher']");
+    private SelenideElement forCandidatesHeader = $(byText("Соискателям"));
+    private SelenideElement forEmployersHeader = $(byText("Соискателям"));
     private SelenideElement regionSearchInput = $("#area-search-input");
     private ElementsCollection regionSearchResults = $$("li.suggest__item");
     private SelenideElement hhSymbol = $(".supernova-logo-wrapper");
@@ -29,17 +33,21 @@ public class MainPage {
         return this;
     }
 
-    // Зараза не даёт переключиться нормально на нужный регион. Отладить.
-    public MainPage switchToDesiredRegion(String desiredRegion) {
+    public MainPage switchToDesiredRegion(String desiredRegion, String firstLetterOfRegion) {
+        if ($(".supernova-navi-item_area-switcher-button").text() == desiredRegion) {
+            return this;
+        }
         regionHeader.click();
-        $(byText("городов")).click();
-        $(byText("У")).click();
+        $(withText("городов")).click();
+        $(byText(firstLetterOfRegion)).click();
         $$(".area-switcher-city").findBy(Condition.text(desiredRegion)).click();
         return this;
     }
 
     public MainPage checkPresenceOfVitalElements() {
         hhSymbol.shouldBe(Condition.visible);
+        forCandidatesHeader.shouldBe(Condition.visible);
+        forEmployersHeader.shouldBe(Condition.visible);
         searchField.shouldBe(Condition.visible);
         searchButton.shouldBe(Condition.visible);
         advancedSearch.shouldBe(Condition.visible);

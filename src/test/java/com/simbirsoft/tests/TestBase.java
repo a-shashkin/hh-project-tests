@@ -1,6 +1,7 @@
 package com.simbirsoft.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.simbirsoft.config.CredentialsConfig;
 import com.simbirsoft.tests.helpers.Attach;
