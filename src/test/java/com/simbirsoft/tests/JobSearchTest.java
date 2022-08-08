@@ -24,8 +24,10 @@ public class JobSearchTest extends TestBase {
 
     @Test
     void changeCityAndCheckItsPresence() {
-        mainPage.openPage();
+        mainPage.openPage()
+                .switchToDesiredRegion("Ульяновск", "У");
         SearchResultPage searchResultPage = mainPage.searchJob("Разработчик");
         searchResultPage.changeCityAndCheck("Ульяновск", "Димитровград");
     }
+
 }

@@ -5,6 +5,9 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.util.Iterator;
+import java.util.List;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -156,6 +159,40 @@ public class AdvancedSearchPage {
         checkboxesModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
         checkboxesModalWindow.get(0).shouldBe(Condition.visible);
         closeModalWindowButton.click();
+        return this;
+    }
+
+    public AdvancedSearchPage checkChosenSpecializations(String category, List<String> chosenSpecializations) {
+        selectSpecializationsLink.click();
+        $(byText(category)).parent().preceding(0).scrollIntoView(true).click();
+        Iterator<String> iterator = chosenSpecializations.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            $(byText(next)).parent().scrollIntoView(true).click();
+        }
+        chooseButtonModalWindow.click();
+        modalWindow.shouldBe(Condition.hidden);
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            $(byText(next)).shouldBe(Condition.visible);
+        }
+        return this;
+    }
+
+    public AdvancedSearchPage checkChosenIndustries(String category, List<String> chosenIndustries) {
+        selectIndustryLink.click();
+        $(byText(category)).parent().preceding(0).scrollIntoView(true).click();
+        Iterator<String> iterator = chosenIndustries.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            $(byText(next)).parent().scrollIntoView(true).click();
+        }
+        chooseButtonModalWindow.click();
+        modalWindow.shouldBe(Condition.hidden);
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            $(byText(next)).shouldBe(Condition.visible);
+        }
         return this;
     }
 }
