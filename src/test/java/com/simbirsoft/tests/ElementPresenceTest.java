@@ -31,4 +31,14 @@ public class ElementPresenceTest extends TestBase {
         AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
         advancedSearchPage.checkPresenceOfVitalElements();
     }
+
+    @Test
+    void checkElementsInModalsOnAdvancedSearch() {
+
+        mainPage.openPage();
+        AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
+        advancedSearchPage.checkSpecializationsModalWindowElements()
+                          .checkIndustriesModalWindowElements()
+                          .checkRegionsModalWindowElements();
+    }
 }

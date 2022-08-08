@@ -1,11 +1,12 @@
 package com.simbirsoft.pages;
 
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AdvancedSearchPage {
 
@@ -20,6 +21,7 @@ public class AdvancedSearchPage {
     private SelenideElement industry = $(byText("Указать отрасль компании")).preceding(0).$(byText("Любая"));
     private SelenideElement selectIndustryLink = $x("//*[@data-qa='industry-addFromList']");
     private SelenideElement regionSearchField = $x("//*[@data-qa='resumes-search-region-add']");
+    private SelenideElement regionSelectButton = $x("//*[@data-qa='resumes-search-region-selectFromList']");
     private SelenideElement salaryNumberField = $x("//*[@data-qa='vacancysearch__compensation-input']");
     private SelenideElement salaryCurrencyField = $x("//*[@data-qa='vacancysearch__compensation-currency']");
     private SelenideElement searchOnlySetSalaryCheckbox = $x("//*[@name='only_with_salary']");
@@ -54,6 +56,13 @@ public class AdvancedSearchPage {
     private SelenideElement showFiftyRadiobutton = $x("//*[@value='50']");
     private SelenideElement showHundredRadiobutton = $x("//*[@value='100']");
     private SelenideElement submitButton = $("#submit-bottom");
+    private SelenideElement modalWindow = $("div.bloko-modal");
+    private SelenideElement closeModalWindowButton = $("div.bloko-modal-close-button");
+    private SelenideElement searchInModalWindow = $("div.bloko-modal").$(".bloko-input");
+    private SelenideElement cancelButtonModalWindow = $("div.bloko-modal").$(byText("Отменить"));
+    private SelenideElement chooseButtonModalWindow = $("div.bloko-modal").$(byText("Выбрать"));
+    private ElementsCollection expandChevronsModalWindow = $("div.bloko-modal").$$(".bloko-icon");
+    private ElementsCollection checkboxesModalWindow = $("div.bloko-modal").$$(".bloko-checkbox__text");
 
     public AdvancedSearchPage checkPresenceOfVitalElements() {
         boldHeader.should(Condition.exist);
@@ -67,6 +76,7 @@ public class AdvancedSearchPage {
         industry.should(Condition.exist);
         selectIndustryLink.should(Condition.exist);
         regionSearchField.should(Condition.exist);
+        regionSelectButton.should(Condition.exist);
         salaryNumberField.should(Condition.exist);
         salaryCurrencyField.should(Condition.exist);
         searchOnlySetSalaryCheckbox.should(Condition.exist);
@@ -101,6 +111,51 @@ public class AdvancedSearchPage {
         showFiftyRadiobutton.should(Condition.exist);
         showHundredRadiobutton.should(Condition.exist);
         submitButton.should(Condition.exist);
+        return this;
+    }
+
+    public AdvancedSearchPage checkSpecializationsModalWindowElements() {
+        selectSpecializationsLink.click();
+        modalWindow.shouldBe(Condition.visible);
+        closeModalWindowButton.shouldBe(Condition.visible);
+        searchInModalWindow.shouldBe(Condition.visible);
+        cancelButtonModalWindow.shouldBe(Condition.visible);
+        chooseButtonModalWindow.shouldBe(Condition.visible);
+        expandChevronsModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
+        expandChevronsModalWindow.get(0).shouldBe(Condition.visible);
+        checkboxesModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
+        checkboxesModalWindow.get(0).shouldBe(Condition.visible);
+        closeModalWindowButton.click();
+        return this;
+    }
+
+    public AdvancedSearchPage checkIndustriesModalWindowElements() {
+        selectIndustryLink.click();
+        modalWindow.shouldBe(Condition.visible);
+        closeModalWindowButton.shouldBe(Condition.visible);
+        searchInModalWindow.shouldBe(Condition.visible);
+        cancelButtonModalWindow.shouldBe(Condition.visible);
+        chooseButtonModalWindow.shouldBe(Condition.visible);
+        expandChevronsModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
+        expandChevronsModalWindow.get(0).shouldBe(Condition.visible);
+        checkboxesModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
+        checkboxesModalWindow.get(0).shouldBe(Condition.visible);
+        closeModalWindowButton.click();
+        return this;
+    }
+
+    public AdvancedSearchPage checkRegionsModalWindowElements() {
+        regionSelectButton.click();
+        modalWindow.shouldBe(Condition.visible);
+        closeModalWindowButton.shouldBe(Condition.visible);
+        searchInModalWindow.shouldBe(Condition.visible);
+        cancelButtonModalWindow.shouldBe(Condition.visible);
+        chooseButtonModalWindow.shouldBe(Condition.visible);
+        expandChevronsModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
+        expandChevronsModalWindow.get(0).shouldBe(Condition.visible);
+        checkboxesModalWindow.shouldBe(CollectionCondition.sizeGreaterThan(0));
+        checkboxesModalWindow.get(0).shouldBe(Condition.visible);
+        closeModalWindowButton.click();
         return this;
     }
 }
