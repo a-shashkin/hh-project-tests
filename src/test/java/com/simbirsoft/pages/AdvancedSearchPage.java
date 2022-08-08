@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byTitle;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AdvancedSearchPage {
@@ -66,6 +67,7 @@ public class AdvancedSearchPage {
     private SelenideElement chooseButtonModalWindow = $("div.bloko-modal").$(byText("Выбрать"));
     private ElementsCollection expandChevronsModalWindow = $("div.bloko-modal").$$(".bloko-icon");
     private ElementsCollection checkboxesModalWindow = $("div.bloko-modal").$$(".bloko-checkbox__text");
+    private ElementsCollection offeredRegions = $$("li.suggest__item.Bloko-Suggest-Item");
 
     public AdvancedSearchPage checkPresenceOfVitalElements() {
         boldHeader.should(Condition.exist);
@@ -189,6 +191,44 @@ public class AdvancedSearchPage {
         }
         chooseButtonModalWindow.click();
         modalWindow.shouldBe(Condition.hidden);
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            $(byText(next)).shouldBe(Condition.visible);
+        }
+        return this;
+    }
+
+    public AdvancedSearchPage checkChosenRegions(String country, String region, List<String> chosenRegions) {
+        if ($x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).is(Condition.visible)) {
+            $x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).sibling(0).click();
+        }
+        regionSelectButton.click();
+        $(byText(country)).parent().preceding(0).scrollIntoView(true).click();
+        $(byText(region)).parent().preceding(0).scrollIntoView(true).click();
+        Iterator<String> iterator = chosenRegions.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            modalWindow.$(byText(next)).parent().scrollIntoView(true).click();
+        }
+        chooseButtonModalWindow.click();
+        modalWindow.shouldBe(Condition.hidden);
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            $(byText(next)).shouldBe(Condition.visible);
+        }
+        return this;
+    }
+
+    public AdvancedSearchPage typeRegionsAndCheck(List<String> chosenRegions) {
+        if ($x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).is(Condition.visible)) {
+            $x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).sibling(0).click();
+        }
+        Iterator<String> iterator = chosenRegions.iterator();
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            regionSearchField.sendKeys(next.substring(0, next.length() - 3));
+            offeredRegions.findBy(Condition.text(next)).click();
+        }
         while (iterator.hasNext()) {
             String next = iterator.next();
             $(byText(next)).shouldBe(Condition.visible);

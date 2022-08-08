@@ -61,4 +61,20 @@ public class ElementPresenceTest extends TestBase {
         List<String> industries = Arrays.asList("Интернет-провайдер", "Разработка программного обеспечения");
         advancedSearchPage.checkChosenIndustries("Информационные технологии, системная интеграция, интернет", industries);
     }
+
+    @Test
+    void selectRegionsAndCheckPresence() {
+        mainPage.openPage();
+        AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
+        List<String> regions = Arrays.asList("Ульяновск", "Димитровград", "Новоульяновск");
+        advancedSearchPage.checkChosenRegions("Россия", "Ульяновская область", regions);
+    }
+
+    @Test
+    void typeRegionsAndCheckPresence() {
+        mainPage.openPage();
+        AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
+        List<String> regions = Arrays.asList("Ульяновск", "Димитровград", "Новоульяновск");
+        advancedSearchPage.typeRegionsAndCheck(regions);
+    }
 }
