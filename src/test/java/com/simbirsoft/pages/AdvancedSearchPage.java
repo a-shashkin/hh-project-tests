@@ -4,6 +4,7 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.util.Iterator;
 import java.util.List;
@@ -69,6 +70,7 @@ public class AdvancedSearchPage {
     private ElementsCollection checkboxesModalWindow = $("div.bloko-modal").$$(".bloko-checkbox__text");
     private ElementsCollection offeredRegions = $$("li.suggest__item.Bloko-Suggest-Item");
 
+    @Step("Проверить присутствие элементов на странице")
     public AdvancedSearchPage checkPresenceOfVitalElements() {
         boldHeader.should(Condition.exist);
         keywordField.should(Condition.exist);
@@ -119,6 +121,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов в модальном окне выбора специализации")
     public AdvancedSearchPage checkSpecializationsModalWindowElements() {
         selectSpecializationsLink.click();
         modalWindow.shouldBe(Condition.visible);
@@ -134,6 +137,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов в модальном окне выбора отрасли")
     public AdvancedSearchPage checkIndustriesModalWindowElements() {
         selectIndustryLink.click();
         modalWindow.shouldBe(Condition.visible);
@@ -149,6 +153,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов в модальном окне выбора региона")
     public AdvancedSearchPage checkRegionsModalWindowElements() {
         regionSelectButton.click();
         modalWindow.shouldBe(Condition.visible);
@@ -164,6 +169,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов после их выбора в модальном окне выбора специализации")
     public AdvancedSearchPage checkChosenSpecializations(String category, List<String> chosenSpecializations) {
         selectSpecializationsLink.click();
         $(byText(category)).parent().preceding(0).scrollIntoView(true).click();
@@ -181,6 +187,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов после их выбора в модальном окне выбора отрасли")
     public AdvancedSearchPage checkChosenIndustries(String category, List<String> chosenIndustries) {
         selectIndustryLink.click();
         $(byText(category)).parent().preceding(0).scrollIntoView(true).click();
@@ -198,6 +205,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов после их выбора в модальном окне выбора региона")
     public AdvancedSearchPage checkChosenRegions(String country, String region, List<String> chosenRegions) {
         if ($x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).is(Condition.visible)) {
             $x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).sibling(0).click();
@@ -219,6 +227,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
+    @Step("Проверить присутствие элементов после их выбора через строку поиска")
     public AdvancedSearchPage typeRegionsAndCheck(List<String> chosenRegions) {
         if ($x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).is(Condition.visible)) {
             $x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).sibling(0).click();

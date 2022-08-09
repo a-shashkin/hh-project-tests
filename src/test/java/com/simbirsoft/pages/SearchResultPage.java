@@ -4,6 +4,7 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -24,6 +25,8 @@ public class SearchResultPage {
     private ElementsCollection tagsCollection = $$("a.bloko-chips-chip-link");
     private ElementsCollection salariesCollection = $$("span.bloko-header-section-3");
 
+    @Step("Проверить присутствие важных элементов: поле поиска, кнопка поиска, кнопка расширенного поиска, вкладка \"Вакансии\", вкладка \"Резюме\", " +
+            "вкладка \"Работодатели\", полужирный заголовок, результаты поиска (название вакансий, теги, зарплаты)")
     public SearchResultPage checkPresenceOfVitalElements() {
         searchField.shouldBe(Condition.visible);
         searchButton.shouldBe(Condition.visible);
@@ -38,16 +41,19 @@ public class SearchResultPage {
         return this;
     }
 
+    @Step("Проверить, что первая вакансия соответствует запросу {searchRequest}")
     public SearchResultPage checkFirstJobInResults(String searchRequest) {
         jobNamesCollection.get(0).shouldHave(Condition.text(searchRequest));
         return this;
     }
 
+    @Step("Проверить, что вакансия с порядковым номером {number + 1} соответствует запросу {searchRequest}")
     public SearchResultPage checkCertainJobInResults(int number, String searchRequest) {
         jobNamesCollection.get(number).shouldHave(Condition.text(searchRequest));
         return this;
     }
 
+    @Step("Проверить выдачу вакансии при смене места проживания с {preselectedCity} на {targetCity}")
     public SearchResultPage changeCityAndCheck(String preselectedCity, String targetCity) {
         $(byText("Регион")).scrollIntoView(true);
         $$x("//*[@data-qa='serp__novafilter-title']").findBy(Condition.text(preselectedCity)).click();

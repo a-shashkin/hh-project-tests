@@ -56,3 +56,15 @@ tasks.withType(Test) {
 test {
     useJUnitPlatform()
 }
+
+task element_presence_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "element_presence_tests"
+    }
+}
+
+task job_search_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "job_search_tests"
+    }
+}

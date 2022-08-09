@@ -2,8 +2,8 @@ package com.simbirsoft.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
@@ -27,12 +27,14 @@ public class MainPage {
     private SelenideElement playMarketDownload = $("a.supernova-app-button_android");
     private SelenideElement huaweiAppGalleryDownload = $("a.supernova-app-button_huawei");
 
+    @Step("Открыть главную страницу")
     public MainPage openPage() {
         open("");
         hhSymbol.shouldBe(Condition.visible);
         return this;
     }
 
+    @Step("Переключиться на регион {desiredRegion}, начинающийся на букву {firstLetterOfRegion}")
     public MainPage switchToDesiredRegion(String desiredRegion, String firstLetterOfRegion) {
         if ($(".supernova-navi-item_area-switcher-button").text() == desiredRegion) {
             return this;
@@ -44,6 +46,8 @@ public class MainPage {
         return this;
     }
 
+    @Step("Проверить присутствие самых важных элементов: логотип, вкладка \"Соискателям\", вкладка \"Работодателям\", поле поиска, кнопка поиска, " +
+            "кнопка расширенного поиска, ссылка \"Помощь\", кнопка регистрации, кнопка авторизации, кнопки загрузки мобильного приложения")
     public MainPage checkPresenceOfVitalElements() {
         hhSymbol.shouldBe(Condition.visible);
         forCandidatesHeader.shouldBe(Condition.visible);
@@ -60,12 +64,14 @@ public class MainPage {
         return this;
     }
 
+    @Step("Сделать поиск вакансии \"{searchRequest}\"")
     public SearchResultPage searchJob(String searchRequest) {
         searchField.setValue(searchRequest);
         searchButton.click();
         return new SearchResultPage();
     }
 
+    @Step("Открыть страницу расширенного поиска")
     public AdvancedSearchPage openAdvancedSearch() {
         advancedSearch.click();
         return new AdvancedSearchPage();

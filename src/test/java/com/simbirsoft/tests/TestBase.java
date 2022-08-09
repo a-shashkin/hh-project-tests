@@ -1,7 +1,6 @@
 package com.simbirsoft.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.simbirsoft.config.CredentialsConfig;
 import com.simbirsoft.tests.helpers.Attach;
@@ -38,7 +37,7 @@ public class TestBase {
         String remoteBrowserUser = credentials.remoteBrowserUser();
         String remoteBrowserPassword = credentials.remoteBrowserPassword();
         String browserURL = System.getProperty("url", credentials.remoteBrowserURL());
-        //Configuration.remote = format("https://%s:%s@%s", remoteBrowserUser, remoteBrowserPassword, browserURL);
+        Configuration.remote = format("https://%s:%s@%s", remoteBrowserUser, remoteBrowserPassword, browserURL);
     }
 
     @AfterEach
