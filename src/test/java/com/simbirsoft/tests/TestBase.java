@@ -37,7 +37,7 @@ public class TestBase {
         String remoteBrowserUser = credentials.remoteBrowserUser();
         String remoteBrowserPassword = credentials.remoteBrowserPassword();
         String browserURL = System.getProperty("url", credentials.remoteBrowserURL());
-        Configuration.remote = format("https://%s:%s@%s", remoteBrowserUser, remoteBrowserPassword, browserURL);
+        //Configuration.remote = format("https://%s:%s@%s", remoteBrowserUser, remoteBrowserPassword, browserURL);
     }
 
     @AfterEach

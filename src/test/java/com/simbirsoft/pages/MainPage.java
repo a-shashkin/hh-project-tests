@@ -36,7 +36,7 @@ public class MainPage {
 
     @Step("Переключиться на регион {desiredRegion}, начинающийся на букву {firstLetterOfRegion}")
     public MainPage switchToDesiredRegion(String desiredRegion, String firstLetterOfRegion) {
-        if ($(".supernova-navi-item_area-switcher-button").text() == desiredRegion) {
+        if ($(".supernova-navi-item_area-switcher-button").text().equals(desiredRegion)) {
             return this;
         }
         regionHeader.click();
