@@ -3,6 +3,7 @@ package com.simbirsoft.tests;
 import com.simbirsoft.pages.AdvancedSearchPage;
 import com.simbirsoft.pages.MainPage;
 import com.simbirsoft.pages.SearchResultPage;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -60,7 +61,8 @@ public class ElementPresenceTest extends TestBase {
     @Test
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на главной странице")
-    @DisplayName("Проверка наличия самых важных элементов")
+    @DisplayName("Проверка наличия самых важных элементов на главной странице")
+    @AllureId("11863")
     void checkElementsOnMainPage() {
 
         mainPage.openPage()
@@ -73,7 +75,8 @@ public class ElementPresenceTest extends TestBase {
     @ParameterizedTest
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице результатов поиска")
-    @DisplayName("Проверка наличия самых важных элементов (без учёта фильтров)")
+    @DisplayName("Проверка наличия самых важных элементов на странице результата поиска (без фильтров)")
+    @AllureId("11864")
     void checkElementsOnSearchResultPage(String searchRequest) {
 
         mainPage.openPage();
@@ -84,7 +87,8 @@ public class ElementPresenceTest extends TestBase {
     @Test
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице расширенного поиска")
-    @DisplayName("Проверка наличия самых важных элементов")
+    @DisplayName("Проверка наличия самых важных элементов на странице расширенного поиска")
+    @AllureId("11865")
     void checkElementsOnAdvancedSearchPage() {
 
         mainPage.openPage();
@@ -95,7 +99,8 @@ public class ElementPresenceTest extends TestBase {
     @Test
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице расширенного поиска")
-    @DisplayName("Проверка наличия элементов в модальных окнах")
+    @DisplayName("Проверка наличия элементов в модальных окнах на странице расширенного поиска")
+    @AllureId("11866")
     void checkElementsInModalsOnAdvancedSearch() {
 
         mainPage.openPage();
@@ -109,7 +114,8 @@ public class ElementPresenceTest extends TestBase {
     @ParameterizedTest
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице расширенного поиска")
-    @DisplayName("Проверка наличия блоков специализаций после их выбора в модальных окнах")
+    @DisplayName("Проверка наличия блоков специализаций на странице расширенного поиска после их выбора в модальном окне")
+    @AllureId("11867")
     void selectSpecializationsAndCheckPresence(String category, List<String> chosenSpecializations) {
         mainPage.openPage();
         AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
@@ -120,7 +126,8 @@ public class ElementPresenceTest extends TestBase {
     @ParameterizedTest
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице расширенного поиска")
-    @DisplayName("Проверка наличия блоков отраслей после их выбора в модальных окнах")
+    @DisplayName("Проверка наличия блоков отраслей на странице расширенного поиска после их выбора в модальном окне")
+    @AllureId("11868")
     void selectIndustriesAndCheckPresence(String category, List<String> chosenIndustries) {
         mainPage.openPage();
         AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
@@ -131,7 +138,8 @@ public class ElementPresenceTest extends TestBase {
     @ParameterizedTest
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице расширенного поиска")
-    @DisplayName("Проверка наличия блоков регионов после их выбора в модальных окнах")
+    @DisplayName("Проверка наличия блоков регионов на странице расширенного поиска после их выбора в модальном окне")
+    @AllureId("11869")
     void selectRegionsAndCheckPresence(String country, String region, List<String> chosenRegions) {
         mainPage.openPage();
         AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();
@@ -142,7 +150,8 @@ public class ElementPresenceTest extends TestBase {
     @ParameterizedTest
     @Tag("element_presence_tests")
     @Story("Проверка наличия элементов на странице расширенного поиска")
-    @DisplayName("Проверка наличия блоков регионов после их выбора через печатание в строке поиска")
+    @DisplayName("Проверка наличия блоков регионов на странице расширенного поиска после их выбора через печатание в строке поиска")
+    @AllureId("11870")
     void typeRegionsAndCheckPresence(List<String> chosenRegions) {
         mainPage.openPage();
         AdvancedSearchPage advancedSearchPage = mainPage.openAdvancedSearch();

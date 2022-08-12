@@ -2,6 +2,7 @@ package com.simbirsoft.tests;
 
 import com.simbirsoft.pages.MainPage;
 import com.simbirsoft.pages.SearchResultPage;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -24,6 +25,7 @@ public class JobSearchTest extends TestBase {
     @Tag("job_search_tests")
     @Story("Поиск вакансии")
     @DisplayName("Проверка возврата запрашиваемой вакансии в первом результате")
+    @AllureId("11871")
     void checkThatFirstResultContainsQuery(String searchRequest) {
         mainPage.openPage();
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
@@ -37,6 +39,7 @@ public class JobSearchTest extends TestBase {
     @Tag("job_search_tests")
     @Story("Поиск вакансии")
     @DisplayName("Проверка возврата запрашиваемой вакансии в заданном результате")
+    @AllureId("11872")
     void checkThatSpecificResultContainsQuery(int number, String searchRequest) {
         mainPage.openPage();
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
@@ -49,7 +52,8 @@ public class JobSearchTest extends TestBase {
     @ParameterizedTest
     @Tag("job_search_tests")
     @Story("Поиск вакансии")
-    @DisplayName("Проверка возврата запрашиваемой вакансии после смены города")
+    @DisplayName("Проверка возврата запрашиваемой вакансии после смены населённого пункта")
+    @AllureId("11873")
     void changeCityAndCheckItsPresence(String desiredRegion,
                                        String firstLetterOfRegion,
                                        String searchRequest,
