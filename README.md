@@ -70,7 +70,11 @@ allure serve build/allure-results
 ![Allure TestOps - Dashboard](https://user-images.githubusercontent.com/47101779/184340781-4bdb3d27-467e-48b2-83f4-4e7745478fec.png)
 
 ## Интеграция с Jira
-![image](https://user-images.githubusercontent.com/47101779/184342774-48a61758-0b09-4031-adde-da114d89d027.png)
+![Jira](https://user-images.githubusercontent.com/47101779/184342774-48a61758-0b09-4031-adde-da114d89d027.png)
 
 ## Оповещение в Telegram
-![image](https://user-images.githubusercontent.com/47101779/184342878-6ed8e5b6-6265-4268-b89a-abf10d161f95.png)
+![Telegram - оповещение](https://user-images.githubusercontent.com/47101779/184342878-6ed8e5b6-6265-4268-b89a-abf10d161f95.png)
+
+## Видео одного из тестов в Selenoid
+### Тест-кейс "Проверка возврата запрашиваемой вакансии в первом результате"
+![Selenoid](https://user-images.githubusercontent.com/47101779/184347813-2d4d59a7-cf60-401f-a154-29ba8aa750f1.gif)
