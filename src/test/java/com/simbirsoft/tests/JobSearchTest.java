@@ -47,7 +47,7 @@ public class JobSearchTest extends TestBase {
     }
 
     @CsvSource(value = {
-            "Ульяновск, У, Разработчик, Ульяновск, Димитровград"
+            "Ульяновск, Разработчик, Ульяновск, Димитровград"
     })
     @ParameterizedTest
     @Tag("job_search_tests")
@@ -55,13 +55,12 @@ public class JobSearchTest extends TestBase {
     @DisplayName("Проверка возврата запрашиваемой вакансии после смены населённого пункта")
     @AllureId("11873")
     void changeCityAndCheckItsPresence(String desiredRegion,
-                                       String firstLetterOfRegion,
                                        String searchRequest,
                                        String preselectedCity,
                                        String targetCity
     ) {
         mainPage.openPage()
-                .switchToDesiredRegion(desiredRegion, firstLetterOfRegion);
+                .switchToDesiredRegion(desiredRegion);
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
         searchResultPage.changeCityAndCheck(preselectedCity, targetCity);
     }

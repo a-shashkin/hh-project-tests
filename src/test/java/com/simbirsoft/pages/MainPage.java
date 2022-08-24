@@ -35,14 +35,13 @@ public class MainPage {
     }
 
     @Step("Переключиться на регион {desiredRegion}, начинающийся на букву {firstLetterOfRegion}")
-    public MainPage switchToDesiredRegion(String desiredRegion, String firstLetterOfRegion) {
+    public MainPage switchToDesiredRegion(String desiredRegion) {
         if ($(".supernova-navi-item_area-switcher-button").text().equals(desiredRegion)) {
             return this;
         }
         regionHeader.click();
-        $x("//*[@data-hh-view-switch-to='113']").click();
-        $(byText(firstLetterOfRegion)).click();
-        $$(".area-switcher-city").findBy(Condition.text(desiredRegion)).click();
+        $("input#area-search-input").sendKeys(desiredRegion.substring(0, desiredRegion.length() - 3));
+        $$(".area-switcher-autocomplete-item").findBy(Condition.text(desiredRegion)).click();
         return this;
     }
 
