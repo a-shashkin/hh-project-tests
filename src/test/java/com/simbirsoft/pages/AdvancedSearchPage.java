@@ -152,8 +152,8 @@ public class AdvancedSearchPage {
             $x("//*[@data-qa='searchform__selected-regions']").$(byTitle("Ульяновск")).sibling(0).click();
         }
         regionSelectButton.click();
-        $(byText(country)).parent().preceding(0).scrollIntoView(true).click();
-        $(byText(region)).parent().preceding(0).scrollIntoView(true).click();
+        modalWindow.$(byText(country)).parent().preceding(0).scrollIntoView(true).click();
+        modalWindow.$(byText(region)).parent().preceding(0).scrollIntoView(true).click();
         Iterator<String> iterator = chosenRegions.iterator();
         while (iterator.hasNext()) {
             String next = iterator.next();
