@@ -34,7 +34,7 @@ public class AdvancedSearchPage {
     private SelenideElement submitButton = $("#submit-bottom");
     private SelenideElement modalWindow = $("div.bloko-modal");
     private SelenideElement closeModalWindowButton = $("div.bloko-modal-close-button");
-    private SelenideElement searchInModalWindow = $("div.bloko-modal").$(".bloko-input");
+    private SelenideElement searchInModalWindow = $("div.bloko-modal").$(".bloko-tree-selector-popup-search");
     private SelenideElement cancelButtonModalWindow = $("div.bloko-modal").$(byText("Отменить"));
     private SelenideElement chooseButtonModalWindow = $("div.bloko-modal").$(byText("Выбрать"));
     private ElementsCollection expandChevronsModalWindow = $("div.bloko-modal").$$(".bloko-icon");
