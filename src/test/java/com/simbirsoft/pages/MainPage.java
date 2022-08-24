@@ -40,7 +40,7 @@ public class MainPage {
             return this;
         }
         regionHeader.click();
-        $("bloko-link.bloko-link_pseudo.bloko-link_kind-secondary.HH-ViewSwitcher-Switcher").click();
+        $x("//*[@data-hh-view-switch-to='113']").click();
         $(byText(firstLetterOfRegion)).click();
         $$(".area-switcher-city").findBy(Condition.text(desiredRegion)).click();
         return this;
