@@ -19,7 +19,7 @@ public class JobSearchTest extends TestBase {
     MainPage mainPage = new MainPage();
 
     @ValueSource(strings = {
-        "Разработчик"
+        "Developer"
     })
     @ParameterizedTest
     @Tag("job_search_tests")
@@ -29,11 +29,7 @@ public class JobSearchTest extends TestBase {
     void checkThatFirstResultContainsQuery(String searchRequest) {
         mainPage.openPage();
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
-        try {
-            searchResultPage.checkFirstJobInResults(searchRequest);
-        } catch (Exception ex) {
-            searchResultPage.checkFirstJobInResults("Developer");
-        }
+        searchResultPage.checkFirstJobInResults(searchRequest);
     }
 
     @CsvSource(value = {
@@ -47,11 +43,7 @@ public class JobSearchTest extends TestBase {
     void checkThatSpecificResultContainsQuery(int number, String searchRequest) {
         mainPage.openPage();
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
-        try {
-            searchResultPage.checkCertainJobInResults(number, searchRequest);
-        } catch (Exception ex) {
-            searchResultPage.checkCertainJobInResults(number, "Developer");
-        }
+        searchResultPage.checkCertainJobInResults(number, searchRequest);
     }
 
     @CsvSource(value = {
