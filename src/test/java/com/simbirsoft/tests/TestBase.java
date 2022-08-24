@@ -3,7 +3,7 @@ package com.simbirsoft.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.simbirsoft.config.CredentialsConfig;
-import com.simbirsoft.tests.helpers.Attach;
+import com.simbirsoft.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
