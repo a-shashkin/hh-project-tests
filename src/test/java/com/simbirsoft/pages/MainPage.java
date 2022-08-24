@@ -40,7 +40,7 @@ public class MainPage {
             return this;
         }
         regionHeader.click();
-        $(withText("городов")).click();
+        $("bloko-link.bloko-link_pseudo.bloko-link_kind-secondary.HH-ViewSwitcher-Switcher").click();
         $(byText(firstLetterOfRegion)).click();
         $$(".area-switcher-city").findBy(Condition.text(desiredRegion)).click();
         return this;
