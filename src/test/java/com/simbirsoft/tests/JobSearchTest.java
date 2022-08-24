@@ -18,18 +18,18 @@ public class JobSearchTest extends TestBase {
 
     MainPage mainPage = new MainPage();
 
-    @ValueSource(strings = {
-        "Developer"
+    @CsvSource(value = {
+        "Разработчик, Developer"
     })
     @ParameterizedTest
     @Tag("job_search_tests")
     @Story("Поиск вакансии")
     @DisplayName("Проверка возврата запрашиваемой вакансии в первом результате")
     @AllureId("11871")
-    void checkThatFirstResultContainsQuery(String searchRequest) {
+    void checkThatFirstResultContainsQuery(String searchRequest, String possibleSynonym) {
         mainPage.openPage();
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
-        searchResultPage.checkFirstJobInResults(searchRequest);
+        searchResultPage.checkFirstJobInResults(searchRequest, possibleSynonym);
     }
 
     @CsvSource(value = {

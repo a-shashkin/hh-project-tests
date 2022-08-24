@@ -42,7 +42,11 @@ public class SearchResultPage {
     }
 
     @Step("Проверить, что первая вакансия соответствует запросу {searchRequest}")
-    public SearchResultPage checkFirstJobInResults(String searchRequest) {
+    public SearchResultPage checkFirstJobInResults(String searchRequest, String possibleSynonym) {
+        if (!(jobNamesCollection.get(0).text().equals(searchRequest))) {
+            jobNamesCollection.get(0).shouldHave(Condition.text(possibleSynonym));
+            return this;
+        }
         jobNamesCollection.get(0).shouldHave(Condition.text(searchRequest));
         return this;
     }
