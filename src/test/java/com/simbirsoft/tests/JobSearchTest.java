@@ -33,17 +33,17 @@ public class JobSearchTest extends TestBase {
     }
 
     @CsvSource(value = {
-            "3, Разработчик"
+            "3, Разработчик, Developer"
     })
     @ParameterizedTest
     @Tag("job_search_tests")
     @Story("Поиск вакансии")
     @DisplayName("Проверка возврата запрашиваемой вакансии в заданном результате")
     @AllureId("11872")
-    void checkThatSpecificResultContainsQuery(int number, String searchRequest) {
+    void checkThatSpecificResultContainsQuery(int number, String searchRequest, String possibleSynonym) {
         mainPage.openPage();
         SearchResultPage searchResultPage = mainPage.searchJob(searchRequest);
-        searchResultPage.checkCertainJobInResults(number, searchRequest);
+        searchResultPage.checkCertainJobInResults(number, searchRequest, possibleSynonym);
     }
 
     @CsvSource(value = {

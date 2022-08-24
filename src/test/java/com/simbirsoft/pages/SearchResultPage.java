@@ -52,7 +52,11 @@ public class SearchResultPage {
     }
 
     @Step("Проверить, что вакансия с порядковым номером {number + 1} соответствует запросу {searchRequest}")
-    public SearchResultPage checkCertainJobInResults(int number, String searchRequest) {
+    public SearchResultPage checkCertainJobInResults(int number, String searchRequest, String possibleSynonym) {
+        if (!(jobNamesCollection.get(number).text().equals(searchRequest))) {
+            jobNamesCollection.get(number).shouldHave(Condition.text(possibleSynonym));
+            return this;
+        }
         jobNamesCollection.get(number).shouldHave(Condition.text(searchRequest));
         return this;
     }
