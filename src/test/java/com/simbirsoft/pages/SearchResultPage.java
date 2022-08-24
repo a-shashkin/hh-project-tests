@@ -43,7 +43,7 @@ public class SearchResultPage {
 
     @Step("Проверить, что первая вакансия соответствует запросу {searchRequest}")
     public SearchResultPage checkFirstJobInResults(String searchRequest, String possibleSynonym) {
-        if (!(jobNamesCollection.get(0).text().equals(searchRequest))) {
+        if (!(jobNamesCollection.get(0).text().contains(searchRequest))) {
             jobNamesCollection.get(0).shouldHave(Condition.text(possibleSynonym));
             return this;
         }
@@ -53,7 +53,7 @@ public class SearchResultPage {
 
     @Step("Проверить, что вакансия с порядковым номером {number + 1} соответствует запросу {searchRequest}")
     public SearchResultPage checkCertainJobInResults(int number, String searchRequest, String possibleSynonym) {
-        if (!(jobNamesCollection.get(number).text().equals(searchRequest))) {
+        if (!(jobNamesCollection.get(number).text().contains(searchRequest))) {
             jobNamesCollection.get(number).shouldHave(Condition.text(possibleSynonym));
             return this;
         }

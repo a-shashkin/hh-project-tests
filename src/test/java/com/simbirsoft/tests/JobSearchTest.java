@@ -19,7 +19,7 @@ public class JobSearchTest extends TestBase {
     MainPage mainPage = new MainPage();
 
     @CsvSource(value = {
-        "Developer, Разработчик"
+        "Разработчик, Developer"
     })
     @ParameterizedTest
     @Tag("job_search_tests")
