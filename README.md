@@ -28,7 +28,7 @@
 <td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png" width="40" height="40"><br>Jenkins</td>
 <td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40" height="40"><br>Github</td>
 <td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://img.stackshare.io/service/40202/default_48abe5208fc58ffa608d65592ad0f588ebc04746.png" width="40" height="40"><br>Allure Report</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://img.stackshare.io/service/40202/default_48abe5208fc58ffa608d65592ad0f588ebc04746.png" width="40" height="40"><br>Allure TestOps</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://img.stackshare.io/service/40438/default_a9d9f8f8546d65b5f12a32106e6d03e6921e11fa.png" width="40" height="40"><br>Allure TestOps</td>
 <td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://logowik.com/content/uploads/images/jira2966.logowik.com.webp" width="40" height="40"><br>Jira</td>
 <td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" width="40" height="40"><br>Telegram Bot</td>
 </tr>
