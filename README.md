@@ -17,20 +17,20 @@
 <table>
 <tbody>
 <tr>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Intelij_IDEA.svg" width="40" height="40"><br>IntelliJ IDEA</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Java.svg" width="40" height="40"><br>Java</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Gradle.svg" width="40" height="40"><br>Gradle</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/JUnit5.svg" width="40" height="40"><br>JUnit5</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenide.svg" width="40" height="40"><br>Selenide</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenoid.svg" width="40" height="40"><br>Selenoid</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/1200px-IntelliJ_IDEA_Icon.svg.png" width="40" height="40"><br>IntelliJ IDEA</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" width="40" height="40"><br>Java</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://static-00.iconduck.com/assets.00/gradle-icon-256x256-jq2wrvfo.png" width="40" height="40"><br>Gradle</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://junit.org/junit5/assets/img/junit5-logo.png" width="40" height="40"><br>JUnit5</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://user-images.githubusercontent.com/47101779/210963191-4a3df255-fcac-418b-a903-eada87d84120.png" width="40" height="40"><br>Selenide</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://avatars.githubusercontent.com/u/26328913?s=280&v=4" width="40" height="40"><br>Selenoid</td>
 </tr>
 <tr>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Jenkins.svg" width="40" height="40"><br>Jenkins</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Github.svg" width="40" height="40"><br>Github</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Allure_Report.svg" width="40" height="40"><br>Allure Report</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Allure_EE.svg" width="40" height="40"><br>Allure TestOps</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Jira.svg" width="40" height="40"><br>Jira</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Telegram.svg" width="40" height="40"><br>Telegram Bot</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png" width="40" height="40"><br>Jenkins</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40" height="40"><br>Github</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://img.stackshare.io/service/40202/default_48abe5208fc58ffa608d65592ad0f588ebc04746.png" width="40" height="40"><br>Allure Report</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://img.stackshare.io/service/40202/default_48abe5208fc58ffa608d65592ad0f588ebc04746.png" width="40" height="40"><br>Allure TestOps</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://logowik.com/content/uploads/images/jira2966.logowik.com.webp" width="40" height="40"><br>Jira</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" width="40" height="40"><br>Telegram Bot</td>
 </tr>
 </tbody>
 </table>
